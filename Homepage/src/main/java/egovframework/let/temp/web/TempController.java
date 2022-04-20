@@ -41,6 +41,25 @@ public class TempController {
 	//임시데이터 목록 가져오기
 	@RequestMapping(value = "/temp/selectList.do")
 	public String selectList(@ModelAttribute("searchVO") TempVO searchVO, HttpServletRequest request, ModelMap model) throws Exception{ 
+		
+		/*List<EgovMap> resultList = tempService.selectTempList(searchVO);
+		model.addAttribute("resultList", resultList);*/
+		
+		PaginationInfo paginationInfo = new PaginationInfo();
+		
+		paginationInfo.setCurrentPageNo(searchVO.getPageIndex());
+		paginationInfo.setRecordCountPerPage(searchVO.getPageUnit());
+		paginationInfo.setPageSize(searchVO.getPageSize());
+		
+		searchVO.setFirstIndex(paginationInfo.getFirstRecordIndex());
+		searchVO.setLastIndex(paginationInfo.getLastRecordIndex());
+		searchVO.setRecordCountPerPage(paginationInfo.getRecordCountPerPage());
+		
+		int totCnt = tempService.selectTempListCnt(searchVO);
+		
+		paginationInfo.setTotalRecordCount(totCnt);
+		model.addAttribute("paginationInfo", paginationInfo);
+		
 		List<EgovMap> resultList = tempService.selectTempList(searchVO);
 		model.addAttribute("resultList", resultList);
 		
@@ -84,6 +103,19 @@ public class TempController {
 	public String delete(@ModelAttribute("searchVO") TempVO searchVO, HttpServletRequest request, ModelMap model) throws Exception{
 		tempService.deleteTemp(searchVO);
 		return "forward:/temp/selectList.do";
+		
+	}
+	//JSTL
+	@RequestMapping(value = "/temp/jstl.do")
+	public String jstl(@ModelAttribute("searchVO") TempVO searchVO, HttpServletRequest request, ModelMap model) throws Exception{
+		return "/temp/Jstl";
+	}
+	//JSTL Import용
+	@RequestMapping(value = "/temp/jstlImport.do")
+	public String jstlImport(@ModelAttribute("searchVO") TempVO searchVO, HttpServletRequest request,ModelMap model) throws Exception{
+		return "/temp/JstlImport";
+	}
+	
 	/*
 	//임시데이터 등록하기
 	@RequestMapping(value = "/temp/insert.do")
@@ -130,5 +162,4 @@ public class TempController {
 		return "forward:/temp/selectList.do";
 	} */
 	
-}
 }

@@ -25,6 +25,9 @@ public interface TempMapper {
 	//임시데이터삭제
 	void deleteTemp(TempVO vo) throws Exception;
 	
+	//임시데이터 목록 수
+	int selectTempListCnt(TempVO vo) throws Exception;
+	
 	/*
 	//임시데이터 등록
 	//void insertTemp(TempVO vo) throws Exception;
