@@ -2,6 +2,8 @@
 <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
 
+
+
 	<!-- 첨부파일 ID Generation  Config-->
     <bean name="egovFileIdGnrService"
         class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl"
@@ -1971,5 +1973,46 @@
         <property name="fillChar" value="0" />
     </bean>     
     <!-- ProcessMonLog... END-->      
+    
+    <!-- TEMP START-->          
+    <bean name="egovTempIdGnrService"
+        class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl"
+        destroy-method="destroy">
+        <property name="dataSource" ref="egov.dataSource" />	
+        <property name="strategy"   ref="tempStrategy" />		<!-- 아래 bean name과 같아야 호출이 가능-->
+        <property name="blockSize"  value="10"/>				<!-- 캐시메모리-->      
+        <property name="table"      value="IDS"/>				<!-- DB에서 생성한 테이블의 이름-->
+        <property name="tableName"  value="TEMP_ID"/>			<!-- table안에 id값이 중복되면 오류발생!-->
+    </bean>
+
+    <bean name="tempStrategy"
+class="egovframework.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
+        <property name="prefix" value="TEMP_" />				<!-- DB에 아이디를 CHAR(20)자리로 제한을 뒀기때문에 TEMP_(5자리) + 15자리의 PK값을 사용할 수 있다.-->
+        <property name="cipers" value="15" />
+        <property name="fillChar" value="0" />
+    </bean>   
+    <!-- TEMP END-->
+    
+    <!-- BOARD START-->          
+    <bean name="egovBoardIdGnrService"
+        class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl"
+        destroy-method="destroy">
+        <property name="dataSource" ref="egov.dataSource" />
+        <property name="strategy"   ref="boardStrategy" />
+        <property name="blockSize"  value="10"/>
+        <property name="table"      value="IDS"/>
+        <property name="tableName"  value="BOARD_ID"/>
+    </bean>
+
+    <bean name="boardStrategy"
+        class="egovframework.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
+        <property name="prefix" value="BOARD_" />
+        <property name="cipers" value="14" />
+        <property name="fillChar" value="0" />
+    </bean>   
+    <!-- BOARD END-->
+    
+    
+    
     
 </beans>
