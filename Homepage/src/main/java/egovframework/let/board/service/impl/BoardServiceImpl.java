@@ -35,4 +35,37 @@ public class BoardServiceImpl extends EgovAbstractServiceImpl implements BoardSe
     public int selectBoardListCnt(BoardVO vo) throws Exception {
     	return boardMapper.selectBoardListCnt(vo);
     }
+    //게시물 등록
+    @Override
+    public String insertBoard(BoardVO vo) throws Exception {
+    		String id = idgenService.getNextStringId();
+    		vo.setBoardId(id);
+    		boardMapper.insertBoard(vo);
+    		return id;
+    }
+    
+    //게시물 상세정보
+    @Override
+    public BoardVO selectBoard(BoardVO vo) throws Exception {
+    	//조회수 업  (impl에있는 이유 :트랜잭션 처리를 위해) 중간에 오류가나면 롤백이 실행된다.
+    	boardMapper.updateViewCnt(vo);
+    	
+    	return boardMapper.selectBoard(vo); //세개가 끝까지 진행되야 커밋이 실행된다. 하나라도 오류나면 롤백
+    }
+    
+    //게시물 수정하기
+    @Override
+    public void updateBoard(BoardVO vo) throws Exception {
+    	boardMapper.updateBoard(vo);
+    }
+    
+    //게시물 삭제하기
+    
+    @Override
+    public void deleteBoard(BoardVO vo) throws Exception {
+    	boardMapper.deleteBoard(vo);
+    }
+    
+    
+    
 }

@@ -10,9 +10,9 @@ public class BoardVO extends ComDefaultVO implements Serializable {
 	//게시판ID
 	private String boardId;
 	//게시물명
-	private String boardSJ;
+	private String boardSj;
 	//게시물 내용
-	private String boardCN;
+	private String boardCn;
 	//조회수
 	private int inqireCo;
 	//등록자IP
@@ -44,17 +44,17 @@ public class BoardVO extends ComDefaultVO implements Serializable {
 	public void setBoardId(String boardId) {
 		this.boardId = boardId;
 	}
-	public String getBoardSJ() {
-		return boardSJ;
+	public String getBoardSj() {
+		return boardSj;
 	}
-	public void setBoardSJ(String boardSJ) {
-		this.boardSJ = boardSJ;
+	public void setBoardSj(String boardSj) {
+		this.boardSj = boardSj;
 	}
-	public String getBoardCN() {
-		return boardCN;
+	public String getBoardCn() {
+		return boardCn;
 	}
-	public void setBoardCN(String boardCN) {
-		this.boardCN = boardCN;
+	public void setBoardCn(String boardCn) {
+		this.boardCn = boardCn;
 	}
 	public int getInqireCo() {
 		return inqireCo;
