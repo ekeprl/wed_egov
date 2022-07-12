@@ -1,0 +1,329 @@
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    line-height:1;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000;
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;  
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+/*초기화 코드 끝*/
+
+@import url('https://fonts.googleapis.com/css2?family=Cute+Font&family=Gamja+Flower&family=Nanum+Brush+Script&display=swap');
+
+
+body{
+    background:#fff;
+    font-family: 'Nanum Brush Script', cursive; 
+   
+}
+
+#header{
+    width: 1920px;
+    margin: 0 auto;
+    background-color: black;
+    height: 200px;
+    
+    
+}
+#header .hdsection {
+    max-width: 1200px;
+    height: 60px;
+    text-align: center;
+    
+    margin-left: 360px;
+    align-items: center;
+    
+}
+#header .box1 {
+    margin: auto;
+    font-size: 1.3em;
+    width: 1200px;
+    height: 150px;
+    
+}
+
+#header .box1 h1{
+    margin: auto;
+    font-size: 3em;
+    padding-top: 70px;
+    
+}
+
+#header  h1 {
+    color: #fff;
+    padding-top: 10px;
+    float: left;
+    font-size: 3em;
+    margin: 0 auto;
+}
+
+#header .gnb{
+    float: right;
+    color: white;
+    padding-top: 15px;
+    padding-right: 5px;
+    font-size: 1.5em;
+  
+}
+
+.event-list .remote {
+    width: 230px;
+    height: 260px;
+    padding: 0;
+    position: fixed;
+}
+
+.event-list .remote ul li {
+   
+    margin: 25px;
+    color: black;
+    text-decoration: none;
+    font-size: 26px;
+}
+
+.event-list ul li a {
+   
+    margin: 25px;
+    color: black;
+    text-decoration: none;
+    font-size: 26px;
+}
+
+.event-list li a:hover {
+    color: red;
+    font-size: 26px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+.gnb ul li{
+    display: inline;
+    float: left;
+    margin: 20px;
+    color: white;
+    text-decoration: none;
+    
+    
+}
+.gnb ul li a{
+    color: white;
+    text-decoration: none;
+    font-family: 'Gamja Flower', cursive;
+    
+}
+
+.event-list {
+    height: 4000px ; 
+    width: 1200px;
+    font-size: 0;
+    padding-top: 70px;
+}
+
+.event-list{
+    
+    margin: auto;
+    font-size: 0;
+   
+}
+
+.event-list .el{
+    padding-right: 100px;
+    font-size: 0;
+    text-decoration: none;
+    height: 300px;
+    width: 750px;
+    float: right;
+    
+}
+
+
+
+
+.event-list .event b {
+    text-align: left;
+    font-size: 25px;   
+    margin-top: 40px;
+    width: 750px;
+    float: left;
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+
+}
+
+.event-list .event span {
+    text-align: left;
+    font-size: 28px;   
+    
+    width: 750px;
+    float: left;
+    display: block;
+    margin-bottom: 20px;
+
+}
+
+
+
+
+
+
+
+
+
+ 
+
+.api{
+    background: url(../images/COUPON.jpg) center no-repeat;
+    text-align: center;
+    width: 1200px;
+    font-size: 0;
+   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer{
+    overflow:hidden;
+    clear:both;
+    position:relative;
+    margin-top:120px;
+    padding:30px 31px 40px 31px !important;
+    border-top:1px solid rgba(0,0,0,0.08);
+    background:black;
+    font-size:13px;
+    line-height:20px;
+    color:white;
+    font-family: 'Courier New', Courier ;
+}
+footer .align{
+    width:620px;margin:0 auto
+}
+footer a{
+    color:white;
+}
+footer .link{
+    overflow:hidden
+}
+footer .link li{
+    float:left; margin-bottom:5px; line-height:normal;
+    font-size: 1.3em;
+}
+footer .link li a{
+    display:inline-block;
+}
+footer .link li button{
+    font-size:13px;
+}
+footer .link li span{
+    display:inline-block;
+    position:relative;
+    top:-2px;
+    width:24px;
+    font-size:11px;
+    text-align:center;
+}
+footer nav ul li a{
+    color: white;
+    text-decoration: none;
+}

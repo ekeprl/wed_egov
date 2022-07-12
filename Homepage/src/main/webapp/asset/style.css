@@ -1,0 +1,365 @@
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    line-height:1;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000;
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;  
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+/*초기화 코드 끝*/
+@import url('https://fonts.googleapis.com/css2?family=Cute+Font&family=Gamja+Flower&family=Nanum+Brush+Script&display=swap');
+
+
+body{
+    background:#fff;
+    font-family: 'Nanum Brush Script', cursive; 
+   
+}
+
+#header{
+    width: 1920px;
+    margin: 0 auto;
+    background-color: black;
+    height: 72px;
+    
+}
+#header .hdsection {
+    max-width: 1200px;
+    height: 60px;
+    text-align: center;
+    
+    margin-left: 360px;
+    align-items: center;
+    
+}
+#header  h1 {
+    color: #fff;
+    padding: 15px 0 0 30px;
+    float: left;
+    font-size: 3em;
+    margin: 0 auto;
+}
+
+#header .gnb{
+    float: right;
+    color: white;
+    padding-top: 15px;
+    padding-right: 5px;
+    font-size: 1.5em;
+  
+}
+
+.gnb ul li{
+    display: inline;
+    float: left;
+    margin: 20px;
+    color: white;
+    text-decoration: none;
+    
+    
+}
+.gnb ul li a{
+    color: white;
+    text-decoration: none;
+    font-family: 'Gamja Flower', cursive;
+}
+
+.slider {
+    height: 620px;
+    background: url(/asset/front/images/mid.JPG) center no-repeat;
+    background-size: 1920px ;
+    
+   
+}
+.slider .sl-txt h2 {
+    color: white;
+    text-align: center;
+    padding-top: 30px;
+    padding-right: 240px;
+    font-size: 7em;
+    letter-spacing: 7.5px;
+}
+.slider .sl-txt p {
+    color: white;
+    text-align: center;
+    padding-left: 180px;
+    font-size: 4.5em;
+    letter-spacing: 4px;
+}
+.content {
+    background: white;
+    width: 1200px;
+    margin: 0 auto;
+}
+.content .item-wrap{
+    margin: auto;
+    height: 385px;
+}
+.content h2 {
+    text-align: left;
+    font-size: 3em;
+    padding: 50px 0 20px 20px;
+    text-align: center;
+    width: auto;
+    margin: 0;
+    max-width: 1200px;
+    font-family: 'Gamja Flower', cursive;
+}
+.item-wrap {
+    font-size: 0;
+    
+}
+.item-wrap .item p {
+    font-size: 1.9em;
+    font-weight: bolder;
+    padding-top: 10px;
+    font-family: 'Gamja Flower', cursive;
+}
+.item-wrap .item h3 {
+    font-size: 1.2em;
+    padding-top: 5px;
+    font-family: 'Gamja Flower', cursive;
+}
+.item-wrap .item1 p {
+    font-size: 1.9em;
+    font-weight: bolder;
+    font-family: 'Gamja Flower', cursive;
+    padding-top: 10px;
+}
+.item-wrap .item1 h3 {
+    font-size: 1.2em;
+    font-family: 'Gamja Flower', cursive;
+    padding-top: 5px;
+}
+
+.item-wrap .item1 {
+    display: inline-block ;
+   text-align: center;
+    font-size: 16px;
+    background-image: none;  
+   
+  
+}
+.item-wrap .item {
+    float: right;
+    width: auto;
+    height: auto;
+    text-align: center;
+    font-size: 16px;
+    
+}
+.item-wrap .item1 p a {
+    text-decoration: none;
+    color: black;
+}
+.item-wrap .item p a {
+    text-decoration: none;
+    color: black;
+}
+.item-wrap .item p h4 {
+    text-decoration: none;
+    color: black;
+    font-size: 1.2em;
+}
+.item-wrap .item p h4 {
+    text-decoration: none;
+    color: black;
+    font-size: 1.2em;
+}
+
+
+.econtent {
+    background: white;
+    width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.econtent h2 {
+    text-align: left;
+    font-size: 3em;
+    padding: 65px 0 20px 20px;
+    text-align: center;
+    width: auto;
+    margin: 0;
+    max-width: 1200px;
+    font-family: 'Gamja Flower', cursive;
+}
+
+.econtent .event-wrap{
+    margin: 0;
+    max-width: 1200px;
+    height: 185px;
+    background : url(/asset/front/images/banner-1.jpg);
+    background-size: cover;
+    
+    
+}
+
+.event-wrap {
+    font-size: 0;
+    border: solid 1px #cccccc;
+    background-color: #cccccc;
+}
+
+.econtent .event-wrap  a{
+    display: inline;
+    font-size: 2.5em;
+    color: black;
+    text-decoration: none;
+    width: 260px;
+    height: 160px;
+    padding-left: 20px;
+}
+.api {
+    background: url(/asset/front/images/roof.jpg) center no-repeat;
+    background-size: cover;
+    width: 1200px;
+    height: 360px;
+    margin: auto;
+    margin-top: 70px;
+    
+}
+
+.api .api-text h2 {
+    text-align: center;
+    color: black;
+    font-size: 2.5em;
+    padding-top: 110px;
+}
+.api .api-text p{
+    text-align: center;
+    color: black;
+    font-size: 1.2em;
+}
+
+
+footer{
+    overflow:hidden;
+    clear:both;
+    position:relative;
+    margin-top:120px;
+    padding:30px 31px 40px 31px !important;
+    border-top:1px solid rgba(0,0,0,0.08);
+    background:black;
+    font-size:13px;
+    line-height:20px;
+    color:white;
+}
+footer .align{
+    width:620px;margin:0 auto
+}
+footer a{
+    color:white;
+}
+footer .link{
+    overflow:hidden
+}
+footer .link li{
+    float:left; margin-bottom:5px; line-height:normal;
+    font-size: 1.3em;
+}
+footer .link li a{
+    display:inline-block;
+}
+footer .link li button{
+    font-size:13px;
+}
+footer .link li span{
+    display:inline-block;
+    position:relative;
+    top:-2px;
+    width:24px;
+    font-size:11px;
+    text-align:center;
+}
+footer nav ul li a{
+    color: white;
+    text-decoration: none;
+}
