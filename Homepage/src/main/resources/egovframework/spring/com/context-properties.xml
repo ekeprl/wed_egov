@@ -14,8 +14,8 @@
 	        	
 	        	<entry key="board.fileStorePath" value="${Globals.File}/upLoad/board/"/>
 	        	
-	        	<entry key="photoThumbWidth" value="200"/> <!-- 썸네일 크기 설정 -->
-	        	<entry key="photoThumbHeight" value="140"/>
+	        	<entry key="photoThumbWidth" value="650"/> 
+	        	<entry key="photoThumbHeight" value="350"/>
 	        </map>
 		</property>
 	</bean>

@@ -9,7 +9,7 @@ div ~ #bbs_wrap { margin-top:30px; }
 #bbs_wrap .total { margin-bottom: 10px;text-align:left;padding-left:15px;background: url("./images/icon_balloon.gif") no-repeat scroll left center transparent; width:auto;float:none;clear:both; }
 #bbs_wrap input + .total { margin-top:0; }
 #bbs_wrap .bbs_list { width:100%; }
-#bbs_search { line-height: 37px;  margin-bottom: 30px; background:#f6f6f6;text-align:center;padding:6px 0;border-top:1px solid #ddd; border-bottom:1px solid #ddd;}
+#bbs_search { height: 75px;  margin-bottom: 30px; background:#f6f6f6;text-align:center;border-top:1px solid #ddd; border-bottom:1px solid #ddd; position:relative;}
 #paging + #bbs_search { text-align:center;background: none repeat scroll 0 0 #F6F6F6; border: 1px solid #E9E9E9;padding:5px 0;line-height: 37px;  margin-bottom: 30px; }
 #bbs_search .inp_s { border: 1px solid #DDDDDD; height: 40px; width:200px;vertical-align: middle; margin-right:3px; }
 
@@ -35,7 +35,7 @@ div ~ #bbs_wrap { margin-top:30px; }
 #bbs_wrap #bbs_search_book .bbs_search_bg table.chart1 tr:first-child td { padding-top:15px; }
 #bbs_wrap #bbs_search_book .bbs_search_bg table.chart1 tr:last-child th,
 #bbs_wrap #bbs_search_book .bbs_search_bg table.chart1 tr:last-child td { padding-bottom:15px; }
-#bbs_search { margin-bottom:20px;}
+#bbs_search { margin-bottom:20px; margin-top:20px;}
 #bbs_search fieldset { }
 #bbs_search fieldset > * { display:inline-block; }
 
@@ -56,7 +56,7 @@ div ~ #bbs_wrap { margin-top:30px; }
 #bbs_wrap .list_table .class { width:100px; }
 #bbs_wrap .list_table .tit { width:auto;padding-left:10px;overflow:hidden;text-align:left; }
 #bbs_wrap .list_table th.tit { text-align:center; }
-#bbs_wrap .list_table .tit a { color:#000; }
+#bbs_wrap .list_table .tit a { color:#000; font-size:18px; padding-bottom : 15px; }
 #bbs_wrap .list_table .tit.end a { color:#999; }
 #bbs_wrap .list_table .state { width:61px; }
 #bbs_wrap .list_table .writer { width:100px; }
@@ -77,6 +77,173 @@ div ~ #bbs_wrap { margin-top:30px; }
 #bbs_wrap .survey-result tbody th { font-weight:bold;vertical-align:top; }
 #bbs_wrap .survey-result td.question { color:#000;font-size:15px;text-align:left;padding-left:15px; }
 #bbs_wrap .survey-result td.answer { color:#777;font-size:14px;text-align:left;padding-left:15px; }
+
+/*헤더 + 푸터*/
+body{
+    background:#fff;
+    font-family: 'Nanum Brush Script', cursive; 
+   
+}
+
+#header{
+    width: 1920px;
+    margin: 0 auto;
+    background-color: black;
+    height: 200px;
+    
+    
+}
+#header .hdsection {
+    max-width: 1200px;
+    height: 60px;
+    text-align: center;
+    
+    margin-left: 360px;
+    align-items: center;
+    
+}
+#header .box1 {
+    margin: auto;
+    font-size: 1.3em;
+    width: 1200px;
+    height: 150px;
+    
+}
+
+#header .box1 h1{
+    margin: auto;
+    font-size: 3em;
+    padding-top: 70px;
+    font-family: 'Gamja Flower', cursive;
+}
+
+#header  h1 {
+    color: #fff;
+    padding-top: 10px;
+    float: left;
+    font-size: 3em;
+    margin: 0 auto;
+    font-family: 'Gamja Flower', cursive;
+}
+
+#header .gnb{
+    float: right;
+    color: white;
+    padding-top: 15px;
+    padding-right: 5px;
+    font-size: 1.5em;
+  
+}
+
+.remote {
+    width: 300px;
+    height: 300px;
+    padding: 0;
+    position: fixed;
+    display:absolute;
+}
+
+
+ul {
+	text-align : center;	
+}
+.remote ul {
+   	
+    margin: 25px 25px 25px 80px;
+    color: black;
+    text-decoration: none;
+    font-size: 26px;
+    text-align:center;
+}
+
+.remote ul li {
+   	margin-top:25px;
+    
+    color: black;
+    text-decoration: none;
+    font-size: 26px;
+}
+
+.remote ul li a {
+   
+    margin: 25px;
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: 'Gamja Flower', cursive;
+}
+
+.remote li a:hover {
+    color: red;
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+.gnb ul li{
+    display: inline;
+    float: left;
+    margin: 20px;
+    color: white;
+    text-decoration: none;
+    
+    
+}
+.gnb ul li a{
+    color: white;
+    text-decoration: none;
+    font-family: 'Gamja Flower', cursive;
+    
+}
+
+
+footer{
+    overflow:hidden;
+    clear:both;
+    position:relative;
+    margin-top:120px;
+    padding:30px 31px 40px 31px !important;
+    border-top:1px solid rgba(0,0,0,0.08);
+    background:black;
+    font-size:13px;
+    line-height:20px;
+    color:white;
+    font-family: 'Gamja Flower', cursive;
+}
+footer .align{
+    width:620px;margin:0 auto
+}
+footer a{
+    color:white;
+}
+footer .link{
+    overflow:hidden
+}
+footer .link li{
+    float:left; margin-bottom:5px; line-height:normal;
+    font-size: 1.3em;
+}
+footer .link li a{
+    display:inline-block;
+}
+footer .link li button{
+    font-size:13px;
+}
+footer .link li span{
+    display:inline-block;
+    position:relative;
+    top:-2px;
+    width:24px;
+    font-size:11px;
+    text-align:center;
+}
+footer nav ul li a{
+    color: white;
+    text-decoration: none;
+}
+
+
 
 /* wirte */
 #bbs_wrap .board_write { width:100%;border-top:2px solid #666;margin-bottom:20px; }

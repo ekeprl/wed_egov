@@ -54,7 +54,7 @@ input[type=tel] {
 .site-footer figure{padding-bottom:0 0 20px;}
 .site-footer address{padding-top:10px;}
 
-.site-body{background:#10b0bf url(../images/main/bg_main.png) 100% 100% no-repeat;position:relative;}
+.site-body{background:#10b0bf url(../images/main/logo.jpg) 100% 100% no-repeat center;position:relative;}
 .slides{height:710px;padding-top:200px;}
 .slides .slide{color:#fff;font-size:30px;font-weight:bold;}
 .slides .slide strong{font-size:45px;display:block;}
@@ -133,10 +133,12 @@ input[type=tel] {
     width: 94%;
     max-width: 470px;
     padding: 25px 40px;
+    height : 500px;
 }
 
 .layer-login .layer-header {
-    padding: 60px 0;
+    padding: 20px 0;
+    text-align : center;
 }
 
 .layer-login .layer-header .logo {
@@ -149,9 +151,10 @@ input[type=tel] {
 
 .layer-login .layer-header .logo .img-logo {
     display: block;
-    width: 171px;
-    height: 45px;
-    background:url(../images/common/logo_footer.png) no-repeat;
+    width: 150px;
+    height: 150px;
+    background:url(../images/wh-logo.jpg) no-repeat center;
+    background-size : cover;
     text-indent:-9999em;
 }
 
@@ -175,7 +178,7 @@ input[type=tel] {
 .layer-login .layer-body fieldset .btn-login {
     height: 80px;
     background: #10b0bf;
-    color: #fff;
+    color: #008040;
     font-weight: bold;
     width: 100%;
     border-radius: 5px;

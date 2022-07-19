@@ -5,7 +5,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-<!-- 기본 URL -->
+<%-- 기본 URL --%>
 <c:url var="_BASE_PARAM" value="">
 	<c:param name="menuNo" value="50"/>
   	<c:if test="${not empty searchVO.searchCondition}"><c:param name="searchCondition" value="${searchVO.searchCondition}" /></c:if>
@@ -18,46 +18,42 @@
 <meta http-equiv="Content-Language" content="ko" >
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
-<title>포토후기!</title>
+<title>수업용 게시판</title>
 <!-- BBS Style -->
 <link href="/asset/BBSTMP_0000000000001/style.css" rel="stylesheet" />
 <!-- 공통 Style -->
-<link href="/asset/LYTTMP_0000000000000/style.css" rel="stylesheet" />
+<link href="/asset/reviewpage.css" rel="stylesheet" />
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 <body>
-<!-- 헤더부분 -->
-		<header id="header">
-        <section class="hdsection"><link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
-          <h1><a href="/board/main.do">'OKDDA'</a></h1>
-          <nav class="gnb">
-              <ul><link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
-                  <li><a href="/board/main.do">홈페이지</a></li>
-                  <li><a href="#">테마</a></li>
-                  <li><a href="#">이벤트</a></li>
-                  <li><a href="/board/selectList.do">후기</a></li>
-              </ul>
-          </nav>
-      </section>
-            <div class="box1"><link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
-                <h1>이벤트 더보기</h1>
-            </div>
-      </header>
-      
-      <nav class="remote">
-            <ul>
-                <li><a href="/board/main.do">홈페이지</a></li>
-                <li><a href="#">테마</a></li>
-                <li><a href="#">이벤트</a></li>
-                <li><a href="/board/selectList.do">후기</a></li>
-            </ul>
-        </nav>
-<div class="container">
+
+
+    
+        
+        <div class="container">
 	<div id="contents">
-	 			<!-- 목록영역 -->
+		<%-- 검색영역 --%>
+		<div id="bbs_search">
+	        <form name="frm" method="post" action="/board/selectList.do">
+				<fieldset>
+					<legend>검색조건입력폼</legend>
+					<label for="ftext" class="hdn">검색분류선택</label>
+					<select name="searchCondition" id="ftext">
+						<option value="0" <c:if test="${searchVO.searchCondition eq '0'}">selected="selected"</c:if>>제목</option>
+		          		<option value="1" <c:if test="${searchVO.searchCondition eq '1'}">selected="selected"</c:if>>내용</option>
+		          		<option value="2" <c:if test="${searchVO.searchCondition eq '2'}">selected="selected"</c:if>>작성자</option>
+					</select>
+					<label for="inp_text" class="hdn">검색어입력</label>
+					<input name="searchKeyword" value="<c:out value="${searchVO.searchKeyword}"/>" type="text" class="inp_s" id="inp_text" />
+					<span class="bbtn_s"><input type="submit" value="검색" title="검색(수업용 게시판 게시물 내)" /></span>
+				</fieldset>
+			</form>
+	    </div>
+	    
+	    <%-- 목록영역 --%>
 		<div id="bbs_wrap">
 			<div class="total">
-				<!-- 총 게시물  -->		
+				총 게시물 
 				<strong><c:out value="${paginationInfo.totalRecordCount}"/></strong>건 ㅣ 
 				현재페이지 <strong><c:out value="${paginationInfo.currentPageNo}"/></strong>/
 				<c:out value="${paginationInfo.totalPageCount}"/>
@@ -74,8 +70,7 @@
 	                  </tr>
 	              </thead>
 	              <tbody>
-       
-  				<!-- 공지 글 -->
+        <%-- 공지 글 --%>
 				 <c:forEach var="result" items="${noticeResultList}" varStatus="status">
 					<tr class="notice">
 						<td class="num"><span class="label-bbs spot">공지</span></td>
@@ -92,21 +87,20 @@
 					</tr>
 				  </c:forEach>
 	                  
-       			<!-- 일반 글 -->
-                 <c:forEach var="result" items="${resultList}" varStatus="status"> 
-					<tr>
+         <%-- 일반 글 --%>
+                 <c:forEach var="result" items="${resultList}" varStatus="status"> <%-- varstatus : for-each에서 사용한 변수명 --%>
+					<tr id="nomallist">
 						<td class="num">
 						<c:out value="${paginationInfo.totalRecordCount - ((searchVO.pageIndex-1) * searchVO.pageUnit) - (status.count - 1)}" /></td>
-						<!-- 이 조건을 쓰는 이유를 한번 알아보자 아주아주 많이 사용한다. -->
+						<%-- 이 조건을 쓰는 이유를 한번 알아보자 아주아주 많이 사용한다.--%>
 						<td class="tit">
 							<c:if test="${not empty result.atchFileNm}">
 								<c:url var="thumbUrl" value="/cmm/fms/getThumbImage.do">
 									<c:param name="thumbYn" value="Y"/>
 									<c:param name="atchFileNm" value="${result.atchFileNm}"/>
 								</c:url>
-								<img src="${thumbUrl}" width="650" height="350" alt=""/>
+								<img src="${thumbUrl}" alt=""/>
 							</c:if>
-							<br/>
 								
 							<c:url var="viewUrl" value="/board/select.do${_BASE_PARAM}">
 								<c:param name="boardId" value="${result.boardId}"/>
@@ -125,70 +119,34 @@
 					</tr>
 			  </c:forEach>
 					  
-					 	<!-- 게시 글이 없을 경우 -->
+					  <%-- 게시 글이 없을 경우 --%>
 					  <c:if test="${fn:length(resultList) == 0}">
 				    	<tr class="empty"><td colspan="5">검색 데이터가 없습니다.</td></tr>
 				    </c:if>
 	                </tbody>
 	            </table>
-             		<!-- 검색영역 -->
-					<div id="bbs_search">
-				        <form name="frm" method="post" action="/board/selectList.do">
-							<fieldset>
-								<legend>검색조건입력폼</legend>
-								<label for="ftext" class="hdn">검색분류선택</label>
-								<select name="searchCondition" id="ftext">
-									<option value="0" <c:if test="${searchVO.searchCondition eq '0'}">selected="selected"</c:if>>제목</option>
-					          		<option value="1" <c:if test="${searchVO.searchCondition eq '1'}">selected="selected"</c:if>>내용</option>
-					          		<option value="2" <c:if test="${searchVO.searchCondition eq '2'}">selected="selected"</c:if>>작성자</option>
-								</select>
-								<label for="inp_text" class="hdn">검색어입력</label>
-								<input name="searchKeyword" value="<c:out value="${searchVO.searchKeyword}"/>" type="text" class="inp_s" id="inp_text" />
-								<span class="bbtn_s"><input type="submit" value="검색" title="검색(수업용 게시판 게시물 내)" /></span>
-							</fieldset>
-						</form>
-				    </div>
-	            
-	            
 	        </div>
-			    <div id="paging">
-			    	<c:url var="pageUrl" value="/board/selectList.do${_BASE_PARAM}"/>
-					<c:set var="pagingParam"><c:out value="${pageUrl}"/></c:set>
-				    <ui:pagination paginationInfo="${paginationInfo}" type="image" jsFunction="${pagingParam}"/>
-			    </div>
-			</div>
-				<div class="btn-cont ar">
-				    <a href="/board/boardRegist.do" class="btn spot"><i class="ico-check-spot"></i> 글쓰기</a>
-				</div>
+		    <div id="paging">
+		    	<c:url var="pageUrl" value="/board/selectList.do${_BASE_PARAM}"/>
+				<c:set var="pagingParam"><c:out value="${pageUrl}"/></c:set>
+			    <ui:pagination paginationInfo="${paginationInfo}" type="image" jsFunction="${pagingParam}"/>
+		    </div>
+		</div>
+		<div class="btn-cont ar">
+		    <a href="/board/boardRegist.do" class="btn spot"><i class="ico-check-spot"></i> 글쓰기</a>
+		</div>
 	</div>
 </div>
- <!-- 푸터부분 -->
- <footer>        
-        <div class="align">
-            <ul class="link">
-                <li><a href="#" target="_blank">회사소개</a><span>|</span></li>
-                <li><a href="#" data-default="term">이용약관</a><span>|</span></li>
-                <li><a href="#" data-default="privacy">개인정보처리방침</a><span>|</span></li>
-                <li><a href="#">콘텐츠산업진흥법에의한 표시</a></li>
-            </ul>
-            <p><b>고객행복센터 1600-0000</b><span>오전 9시 - 새벽 3시</span></p>
-            <address>
-                <span>(주)옥따</span>
-                [34503] 대전광역시 동구 우암로 352-21 | 대표이사 : XXX | 사업자등록번호: 000-00-00000<br/>
-                <span class="order">(주)옥따는 통신판매중개자로서 통신판매의 당사자가 아니며, 상품의 예약, 이용 및 환불 등과 관련한 의무와 책임은 각 판매자에게 있습니다.</span><br/>
-                Copyright GC COMPANY Corp. All rights reserved.
-            </address>
-                          
-    </footer>
-
+    
+      
+  
+     
 
 <script>
 <c:if test="${not empty message}">
 	alert("${message}");
 </c:if>
 </script>
-			
 	
 </body>
 </html>
- 

@@ -17,7 +17,7 @@
     <c:forEach var="fileVO" items="${fileList}" varStatus="status">
         <tr>
             <td>
-                <img src='<c:url value='/cmm/fms/getImage.do'/>?atchFileId=<c:out value="${fileVO.atchFileId}"/>&amp;fileSn=<c:out value="${fileVO.fileSn}"/>' width="640" alt="파일보기링크" />
+                <img src='<c:url value='/cmm/fms/getImage.do'/>?atchFileId=<c:out value="${fileVO.atchFileId}"/>&amp;fileSn=<c:out value="${fileVO.fileSn}"/>' width="640" height="350" alt="파일보기링크" />
             </td>
         </tr>
     </c:forEach>

@@ -30,6 +30,7 @@ footer,header,hgroup,menu,nav,section {
 
 nav ul {
     list-style:none;
+    
 }
 
 blockquote, q {
@@ -42,13 +43,6 @@ q:before, q:after {
     content:none;
 }
 
-a {
-    margin:0;
-    padding:0;
-    font-size:100%;
-    vertical-align:baseline;
-    background:transparent;
-}
 
 /* change colours to suit your needs */
 ins {
@@ -128,6 +122,11 @@ body{
     
 }
 
+#header h1 {
+	font-size : 2.5em;
+	padding-top : 15px;
+}
+
 #header .box1 h1{
     margin: auto;
     font-size: 3em;
@@ -135,12 +134,13 @@ body{
     
 }
 
-#header  h1 {
+#header  a {
     color: #fff;
-    padding-top: 10px;
+    
     float: left;
-    font-size: 3em;
+    font-size: 26px;
     margin: 0 auto;
+    text-decoration: none;
 }
 
 #header .gnb{
@@ -159,20 +159,22 @@ body{
     position: fixed;
 }
 
+
 .event-list .remote ul li {
-   
-    margin: 25px;
+    text-align : center;
     color: black;
     text-decoration: none;
     font-size: 26px;
+    padding-top : 20px;
+    padding-bottom : 20px;
 }
 
 .event-list ul li a {
-   
-    margin: 25px;
+    margin : 0 ;
     color: black;
     text-decoration: none;
     font-size: 26px;
+    
 }
 
 .event-list li a:hover {
@@ -189,8 +191,6 @@ body{
     margin: 20px;
     color: white;
     text-decoration: none;
-    
-    
 }
 .gnb ul li a{
     color: white;
@@ -217,7 +217,7 @@ body{
     padding-right: 100px;
     font-size: 0;
     text-decoration: none;
-    height: 300px;
+    height: 320px;
     width: 750px;
     float: right;
     
@@ -251,14 +251,6 @@ body{
 
 
 
-
-
-
-
-
-
- 
-
 .api{
     background: url(../images/COUPON.jpg) center no-repeat;
     text-align: center;
@@ -266,19 +258,6 @@ body{
     font-size: 0;
    
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

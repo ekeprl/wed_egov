@@ -46,10 +46,10 @@ public class LoginController {
 		LoginVO resultVO = loginService.actionLogin(loginVO); //login한 사람의 상세정보 불러오기
 		if (resultVO != null&& resultVO.getId() != null && !resultVO.getId().equals("")) {
 			request.getSession().setAttribute("LoginVO", resultVO);
-			return "forward:/index.do";
+			return "forward:/board/main.do";
 		} else {
 			model.addAttribute("loginMessage", egovMessageSource.getMessage("fail.common.login"));
-			return "forward:/index.do";
+			return "forward:/board/main.do";
 		}
 	}
 	
@@ -60,7 +60,7 @@ public class LoginController {
 //		RequestContextHolder.getRequestAttributes().removeAttribute("LoginVO", RequestAttributes.SCOPE_SESSION); // remove- : logiVO만 삭제
 		request.getSession().invalidate(); // 로그인한 사용자가 로그아웃한 순간 모든 세션을 삭제
 		
-		return "forward:/index.do";
+		return "forward:/board/main.do";
 			
 	}
 	

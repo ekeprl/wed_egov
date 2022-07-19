@@ -17,12 +17,12 @@
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 <body>
-<header id="header">
+<header id="header"><link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
       <section class="hdsection">
-        <h1>'OKDDA'</h1>
+        <a href="/board/main.do"><h1>'OKDDA'</h1></a>
         <nav class="gnb">
             <ul>
-                <li><a href="#">홈페이지</a></li>
+                <li><a href="/board/main.do">홈페이지</a></li>
                 <li><a href="#">테마</a></li>
                 <li><a href="#">이벤트</a></li>
                 <li><a href="/board/selectList.do">후기</a></li>
@@ -56,7 +56,7 @@
                 <h3>이렇게 멋진곳에서 캠핑이라니!! 너무너무 즐거웠습니다 강추강추!</h3>
             </div>
             <div class="item">
-                <img src="/asset/front/images/후기1.jpg" width="550px" height="350px" alt=""><br/>
+                <a href="/board/selectList.do"><img src="/asset/front/images/후기1.jpg" width="550px" height="350px" alt=""></a>
                 <p>옥상 파티</p><br/>
                 <h3>옥상에서의 파티는 처음인데 생각보다 훨씬 더 좋은 곳이네요!</h3>
             </div>
@@ -74,8 +74,8 @@
     <section class="api">
         <div class="api-text">
             <h2>더 많은 혜택은 어플에서 만나보세요!</h2>
-            <div style="position: relative; top: 60px ;left :420px;"><img src="/asset/front/images/google.JPG" alt="googlestore"></div>
-            <div style="position: relative; top: 8px ;left :620px;"><img src="/asset/front/images/apple.JPG" alt="googlestore"></div>
+            <a href="https://play.google.com/store/apps"><div style="position: relative; top: 60px ;left :420px; width:165px; height:50px"><img src="/asset/front/images/google.png" alt="googlestore"></div></a>
+            <a href="https://itunes.apple.com/kr/genre/ios/id36"><div style="position: relative; top: 8px ;left :620px; width:165px; height:50px"><img src="/asset/front/images/apple.jpg" alt="apple app store"></div></a>
             
         </div>        
     </section>
