@@ -14,8 +14,11 @@
 	        	
 	        	<entry key="board.fileStorePath" value="${Globals.File}/upLoad/board/"/>
 	        	
-	        	<entry key="photoThumbWidth" value="650"/> 
-	        	<entry key="photoThumbHeight" value="350"/>
+	        	<entry key="photoThumbWidth" value="200"/> 
+	        	<entry key="photoThumbHeight" value="140"/>
+	        	
+	        	<!-- 예약자 업로드 물리경로 -->
+	        	<entry key="rsvFileStorePath" value="${Globals.File}/upload/rsv" />
 	        </map>
 		</property>
 	</bean>
